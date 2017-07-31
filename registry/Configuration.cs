@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using System.Security.Principal;
 using Microsoft.Win32;
 
 /* ///////////////////////////////////////////////////////////////////////////
@@ -65,6 +66,18 @@ namespace DarkToolz
 
         #endregion
 
+        #region :: Windows User
+        public static bool AdminRights
+        {
+            get
+            {
+                WindowsPrincipal principal = new WindowsPrincipal(WindowsIdentity.GetCurrent());
+                return principal.IsInRole(WindowsBuiltInRole.Administrator);
+            }
+        }
+        public static string CurrentUserIdentity => WindowsIdentity.GetCurrent().Name;
+
+        #endregion
 
         #region :: Release Version
         public static string GetRelease(TimeZoneInfo target = null)
