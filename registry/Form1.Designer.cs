@@ -34,27 +34,31 @@
             this.enumItems = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // ConfigValue
             // 
+            this.ConfigValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ConfigValue.Location = new System.Drawing.Point(22, 56);
-            this.ConfigValue.Name = "textBox1";
+            this.ConfigValue.Name = "ConfigValue";
             this.ConfigValue.Size = new System.Drawing.Size(198, 20);
             this.ConfigValue.TabIndex = 1;
             // 
-            // button2
+            // btnSave
             // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Location = new System.Drawing.Point(145, 82);
-            this.btnSave.Name = "button2";
+            this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.save);
             // 
-            // button1
+            // btnRead
             // 
+            this.btnRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnRead.Location = new System.Drawing.Point(22, 82);
-            this.btnRead.Name = "button1";
+            this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
             this.btnRead.TabIndex = 2;
             this.btnRead.Text = "read";
@@ -63,6 +67,8 @@
             // 
             // enumItems
             // 
+            this.enumItems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.enumItems.FormattingEnabled = true;
             this.enumItems.Location = new System.Drawing.Point(22, 29);
             this.enumItems.Name = "enumItems";

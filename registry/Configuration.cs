@@ -20,7 +20,7 @@ namespace DarkToolz
     public static class Configuration
     {
         #region -- Base Configuration --
-        private const string REGISTRY_BRANCH = @"Software\Santander-igsf";  // Registry place: HKLM\Software\AppName
+        private const string REGISTRY_BRANCH = @"Software\AppName";         // Registry place: HKLM\Software\WOW6432Node\AppName
         private const string DEFAULT_STRING = @"";                          // If Key/Value is not found
         public enum ConfigurationKeys                                       // Constrain Key/Value pairs to this enum
         {
@@ -59,9 +59,15 @@ namespace DarkToolz
         public static void UpdateValue(ConfigurationKeys key, string newValue)
         {
             var branch = Registry.LocalMachine.OpenSubKey(REGISTRY_BRANCH, true);
+            if (branch == null)
+            {
+                Registry.LocalMachine.CreateSubKey(REGISTRY_BRANCH);
+                branch = Registry.LocalMachine.OpenSubKey(REGISTRY_BRANCH, true);
+            }
             branch.SetValue(key.ToString(), newValue);
             branch.Close();
         }
+
 
 
         #endregion

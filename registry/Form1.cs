@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DarkToolz;
 using Microsoft.Win32;
 
 namespace registry
@@ -24,14 +25,13 @@ namespace registry
             Configuration.ConfigurationKeys key;
             Enum.TryParse<Configuration.ConfigurationKeys>(enumItems.SelectedValue.ToString(), out key);
             Configuration.UpdateValue(key, ConfigValue.Text);
+            MessageBox.Show(@"Configuration key write success");
         }
 
         private void readKey(object sender, EventArgs e)
         {
             Configuration.ConfigurationKeys key;
             Enum.TryParse<Configuration.ConfigurationKeys>(enumItems.SelectedValue.ToString(), out key);
-            
-
             ConfigValue.Text = Configuration.GetValue(key);
         }
 
